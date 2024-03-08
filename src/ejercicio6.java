@@ -7,7 +7,17 @@ import java.util.Vector;
 public class ejercicio6 {
     public static void main(String[] args) {
         Vector<Integer> vector = new Vector<>();
+        vector.add(10);
+        vector.add(20);
+        vector.add(30);
 
+        int suma = 0;
+
+        for (int num : vector) {
+            suma += num;
+        }
+
+        System.out.println("La suma de todos los elementos en el vector es: " + suma);
     }
 
 
