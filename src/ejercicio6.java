@@ -1,25 +1,27 @@
-/*1. Suma de elementos:
- Escribir un programa que calcule la suma de todos
- los elementos en un vector de enteros.*/
 
-import java.util.Vector;
+//6. Ejercicio de Generación de Patrón de Asteriscos: Escribe un programa en Java que solicite al usuario ingresar un número entero positivo. Luego, muestra un patrón de asteriscos como el siguiente ejemplo, donde cada fila tiene el mismo número de asteriscos que el número ingresado:
+//Ejemplo: Pista: Pueden usar un ciclo For y el caracter de salto de linea \n Si el usuario ingresa 4:
+//*
+//**
+//***
+//****
 
+import java.util.Scanner;
 public class ejercicio6 {
     public static void main(String[] args) {
-        Vector<Integer> vector = new Vector<>();
-        vector.add(10);
-        vector.add(20);
-        vector.add(30);
 
-        int suma = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("ingresa un número entero positivo: ");
 
-        for (int num : vector) {
-            suma += num;
+        int numero = scanner.nextInt();
+
+        for (int i = 1; i <= numero; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
 
-        System.out.println("La suma de todos los elementos en el vector es: " + suma);
+
     }
-
-
-
 }

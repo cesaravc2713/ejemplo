@@ -1,22 +1,31 @@
-/*Ejercicio de Cálculo de Intereses Compuestos:
-Desarrolla un programa en Java que permita calcular el monto final de una inversión después de un cierto número de años,
-utilizando la fórmula de interés compuesto. El programa debe pedir al usuario ingresar la cantidad inicial invertida, la tasa
-de interés anual y el número de años. Luego, muestra el monto final.*/
-
+//5. Ejercicio de Suma de Dígitos:
+//Escribe un programa en Java que solicite al usuario ingresar un número entero positivo.
+//Luego, suma todos los dígitos del número y muestra el resultado.
+//Ejemplo: Usuario ingresa 12 → El programa retorna 3
+//SumDigitos = 1+2= 3
 import java.util.Scanner;
-
 public class ejercicio5 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("cantidad inicial invertida:");
-        double principal = scanner.nextDouble();
-        System.out.println("tasa de interés anual:");
-        double tasaInteres = scanner.nextDouble();
-        System.out.println("número de años:");
-        int anos = scanner.nextInt();
+        System.out.print("ingresa un número entero positivo: ");
 
-        double montoFinal = principal * Math.pow(1 + tasaInteres / 100, anos);
-        System.out.printf("monto final después de %d años es: %.2f\n", anos, montoFinal);
+        int numero = scanner.nextInt();
+        scanner.close();
+
+        int sumaDigitos = 0;
+        int numeroOriginal = numero;
+
+        while (numero > 0) {
+            int digito = numero % 10;
+            sumaDigitos += digito;
+            numero /= 10;
+        }
+
+        System.out.println("la suma de los dígitos de " + numeroOriginal + " es: " + sumaDigitos);
+
+
+
+
     }
 }

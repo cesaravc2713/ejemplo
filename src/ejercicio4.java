@@ -1,26 +1,22 @@
+/*Ejercicio de Cálculo de Intereses Compuestos:
+Desarrolla un programa en Java que permita calcular el monto final de una inversión después de un cierto número de años,
+utilizando la fórmula de interés compuesto. El programa debe pedir al usuario ingresar la cantidad inicial invertida, la tasa
+de interés anual y el número de años. Luego, muestra el monto final.*/
 
-/*Ejercicio de Validación de Contraseña:
-Crea un programa en Java que pida al usuario ingresar una contraseña. El programa debe verificar si
-la contraseña cumple con ciertos criterios de seguridad, como tener al menos 8 caracteres de longitud y contener
- al menos una letra mayúscula, una letra minúscula y un número.*/
 import java.util.Scanner;
-public class ejercicio4 {
 
-    public static void main(String[] args){
+public class ejercicio4 {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Por favor, ingresa tu contraseña:");
-        String contrasena = scanner.nextLine();
+        System.out.println("cantidad inicial invertida:");
+        double principal = scanner.nextDouble();
+        System.out.println("tasa de interés anual:");
+        double tasaInteres = scanner.nextDouble();
+        System.out.println("número de años:");
+        int anos = scanner.nextInt();
 
-        if (contrasena.matches("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}")) {
-            System.out.println("La contraseña es segura.");
-        } else {
-            System.out.println("La contraseña no es segura.");
-        }
-
-
-
-
-
+        double montoFinal = principal * Math.pow(1 + tasaInteres / 100, anos);
+        System.out.printf("monto final después de %d años es: %.2f\n", anos, montoFinal);
     }
 }
